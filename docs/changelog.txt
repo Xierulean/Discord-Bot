@@ -1,3 +1,7 @@
+07/20/17
+- Added /instanceof command: A test command used to test a future function
+- Added /choice command: allows user to let the bot pick out of a set of choices that the user provides
+
 07/19/17
 - Added a changelog
 

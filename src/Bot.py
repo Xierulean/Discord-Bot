@@ -47,9 +47,10 @@ async def kill(ctx, *, member : discord.Member =  None):
 		await bot.say(ctx.message.author.mention + ": Why do you want me to kill you?")
 	else: 
 		random.seed(time.time())
-		choice = killResponses[random.randrange(len(killResponses))] % member.mention
-		await bot.say(ctx.message.author.mention + " " + choice)
-                
+		choiceResponse = killResponses[random.randrange(len(killResponses))] % member.mention
+		await bot.say(ctx.message.author.mention + " " + choiceResponse)
+ 
+# Hug someone or yourself
 @bot.command(pass_context = True)
 async def hug(ctx, *, member : discord.Member = None):
         if member is None:
@@ -59,6 +60,24 @@ async def hug(ctx, *, member : discord.Member = None):
                 await bot.say("A bear gave " + member.mention + " a bear hug.")
             else:
                 await bot.say(member.mention + " has been hugged by " + ctx.message.author.mention + ".")
-	
+                
+# Make the bot pick a choice in the form of: choice1,choice2
+@bot.command(pass_context = True)
+async def choice(ctx, *, choices: str):
+    choicesArr = choices.split(" or ")
+    chosen = choicesArr[random.randrange(len(choicesArr))]
+    await bot.say(ctx.message.author.mention + ": I choose " + chosen)
+  
+# Random command to test something
+@bot.command(pass_context = True)
+async def instanceof(ctx):
+    for member in ctx.message.server.members:
+        try:
+            await bot.change_nickname(member, "instanceof " + member.name)
+        except discord.errors.Forbidden:
+            pass
+    await bot.say(ctx.message.author.mention + ": Everyone is a instance of")
+    
 bot.run("Insert bot token here.")
+
 
