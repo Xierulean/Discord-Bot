@@ -1,0 +1,16 @@
+07/19/17
+- Added a changelog
+
+07/18/17
+- Added /hug and /kill commands; two silly commands for the user to play with
+- Updated Readme about what's required to install
+
+07/17/17
+- Added a /echo command that lets the bot echo what the user said
+- Converted the project from JavaScript to Python
+
+06/01/17
+- Updated some information about the project in Readme.md
+
+05/31/17
+- The bot can now log and send text messages in Discord
