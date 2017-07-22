@@ -1,5 +1,8 @@
+07/21/17
+- Added /noinstance command: Return everyone's nickname back to normal in the server
+
 07/20/17
-- Added /instanceof command: A test command used to test a future function
+- Added /instanceof command: Add "instanceof" to everyone's nickname in the server
 - Added /choice command: allows user to let the bot pick out of a set of choices that the user provides
 
 07/19/17

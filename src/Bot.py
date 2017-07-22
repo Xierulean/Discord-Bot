@@ -68,7 +68,7 @@ async def choice(ctx, *, choices: str):
     chosen = choicesArr[random.randrange(len(choicesArr))]
     await bot.say(ctx.message.author.mention + ": I choose " + chosen)
   
-# Random command to test something
+# Add "instanceof" to everyone's nickname in the server
 @bot.command(pass_context = True)
 async def instanceof(ctx):
     for member in ctx.message.server.members:
@@ -76,7 +76,17 @@ async def instanceof(ctx):
             await bot.change_nickname(member, "instanceof " + member.name)
         except discord.errors.Forbidden:
             pass
-    await bot.say(ctx.message.author.mention + ": Everyone is a instance of")
+    await bot.say(ctx.message.author.mention + ": Everyone's nickname is changed!")
+
+# Return everyone's nickname in the server back to normal 
+@bot.command(pass_context = True)
+async def noinstance(ctx):
+    for member in ctx.message.server.members:
+        try:
+            await bot.change_nickname(member, member.name)
+        except discord.errors.Forbidden:
+            pass
+    await bot.say(ctx.message.author.mention + ": Everyone's nickname is now back to normal!")
     
 bot.run("Insert bot token here.")
 
