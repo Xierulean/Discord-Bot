@@ -1,3 +1,4 @@
+from urllib.parse import urlencode
 import discord
 from discord.ext import commands
 import logging
@@ -6,11 +7,11 @@ import random
 import time
 
 bot = commands.Bot(command_prefix="/")
+console = discord.Object("319302490518454272")
 killResponses = [" threw %s thrown off the boat!", " gave %s a headbutt!", " unleashed a Kraken on %s!", " gave %s a bearhug!"]
 
 # Note to self: \ = new line for python
 print("Please wait while the Bot logs in ...")
-
 
 @bot.event
 async def on_ready():
@@ -87,6 +88,16 @@ async def noinstance(ctx):
         except discord.errors.Forbidden:
             pass
     await bot.say(ctx.message.author.mention + ": Everyone's nickname is now back to normal!")
+    
+# Command that lets the user to search through Python's documentation
+@bot.command()
+async def pyhelp(*args):
+    print(args)
+    url = ("https://docs.python.org/3/search.html?{}"
+            "&check_keywords=yes&area=default".format(
+                urlencode({'q': ' '.join(args)})
+            ))
+    return await bot.say(url)
     
 bot.run("Insert bot token here.")
 

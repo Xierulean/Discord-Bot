@@ -1,3 +1,6 @@
+07/22/17
+- Added /pyhelp command: Allows the user to use the bot to search in Python's documentations
+
 07/21/17
 - Added /noinstance command: Return everyone's nickname back to normal in the server
 
