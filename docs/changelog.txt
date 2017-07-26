@@ -1,3 +1,14 @@
+07/25/17
+- Removed /test command, it was redundant
+- Minor changes to the following commands: 
+	renamed /instanceof to /trollEveryone and added more functionality
+	renamed /noinstance to /noMoreTroll
+	renamed /choice to /pick
+- Moved all of Discord IDs and data that the bot requires from Bot.py into configurations.py to make it easier for the user to customize
+- Added program header/information and To-do List in Bot.py
+- Added /help command: Bot returns a list commands that the bot can perform but more details abou each command will be added a bit later
+- Added /ask command: Functions similar to "Eight Ball," the bot returns an answer to user in yes, no, or perhaps form
+
 07/22/17
 - Added /pyhelp command: Allows the user to use the bot to search in Python's documentations
 
