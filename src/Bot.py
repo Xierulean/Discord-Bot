@@ -11,9 +11,11 @@
 #	- Add better documentation of the code
 #	- Add bot help command
 #	- Create a database for Vindictus's scroll price estimates (with permmissions)
-#	- Get Firebase DB to work with the bot
 #	- Reorganize the code or separate the code into different files
 #	- Update the README.md
+
+# Note to self: Download and install ffmeg
+# Also, check this out: https://pypi.python.org/pypi/googletrans
 
 
 import discord
@@ -22,11 +24,19 @@ from urllib.parse import urlencode
 import logging
 import asyncio
 import configurations
+import pyrebase
 import random
 import time
 
+# Note to self: \ = new line for python
 
 bot = commands.Bot(configurations.PREFIX)
+firebase = pyrebase.initialize_app(configurations.FIREBASE_INFO)
+db = firebase.database()
+
+# Also, don't forget to run "pip install pyfirebase"
+
+print("Please wait while the Bot logs in ...")
 
 eightBallResponses = [
     "Sure, go for it!",
@@ -147,5 +157,42 @@ async def ask(ctx):
 # Command: Bot Help, returns all available commands
 async def help(ctx):
     await bot.say()
+	
+# Command: Shows names of minecraft location stored in database
+# Usage: !show_location_names
+@bot.command()
+async def show_location_names():
+    all_locations = db.child("minecraft").child("locations").shallow().get()
+    response = "I know about:\n{}".format("\n".join(all_locations.val()))
+    return await bot.say(response)
+
+# Command: Adds minecraft location then store it into database
+# Usage: !add_location name x y z
+@bot.command()
+async def add_location(name, x, y, z):
+    x, y, z = map(int, [x, y, x])
+    db.child("minecraft").child("locations").update(
+        {name: "{} {} {}".format(x, y, z)}
+    )
+    return await bot.say("I've added {} to the database.".format(name))
+
+# Command: Shows minecraft location in the database
+# Usage: !show_locations name
+@bot.command()
+async def show_locations(name):
+    location = db.child("minecraft").child("locations").child(name).get()
+    x, y, z = location.val().split()
+    response = "{} is at X {}, Y {}, Z {}".format(name, x, y, z)
+    return await bot.say(response)
+
+# Note to self: How to push data into database example
+# If python doesn't run for windows git bash and path is already added then type: alias python='winpty python.exe'
+# python
+# import configurations
+# import pyrebase
+# firebase = pyrebase.initialize_app(configurations.FIREBASE_INFO)
+# db = firebase.database()
+# db.child("minecraft").child("locations").update({"spawn": "0 0 0"})
+# db.child("minecraft").child("locations").update({"end portal": "35 134 50"})
 
 bot.run(configurations.BOT_TOKEN)
