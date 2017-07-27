@@ -1,3 +1,9 @@
+07/27/17
+- Updated and added more information in configurations.py
+- Taught the bot how to sing
+	The bot can now join voice channels and play music, though, there are some issues with music buffering.
+	Hopefully, the issue with buffering will be fixed soon.
+
 07/26/17
 - Added some tutorial in configurations.py
 - Added the following commands that are related to Minecraft though it may be used for other things as well
