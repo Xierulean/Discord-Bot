@@ -1,3 +1,15 @@
+##########################################################################################
+# Program Name:             Discord Bot
+# Author:                   DMCTruong
+# Last Updated:             July 29, 2017
+# Program Description:      A general purpose bot that was created for Discord chat	
+##########################################################################################
+
+07/29/17
+- Added the following Pyrebase commands:
+	/newEntry: User can create a new database in pyrebase. This command can also be used to add entries into existing databases.
+	/alldb: This command returns the names of all of the databases that are currently being stored in Pyrebase
+
 07/27/17
 - Updated and added more information in configurations.py
 - Taught the bot how to sing

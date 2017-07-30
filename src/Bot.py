@@ -1,14 +1,13 @@
 ##########################################################################################
 # Program Name:     Discord Bot
 # Author:           DMCTruong
-# Last Updated:     July 27, 2017
+# Last Updated:     July 29, 2017
 # Description:      A general purpose bot written for Discord
 ##########################################################################################
 
 
 # To do List:
 #	- Add a tutorial on how to install and get the keys for the configurations
-#	- Add a way for the user to create new databases
 #	- Add better documentation of the code
 #	- Add bot help command
 #	- Create a database for Vindictus's scroll price estimates (with permmissions)
@@ -19,7 +18,6 @@
 # Known Issues:
 #	- The bot seems to buffer a lot when playing music. 
 #		Hopefully, the issue and a solution will be found soon.
-
 
 
 # Note to self: Download and install ffmeg
@@ -406,7 +404,7 @@ async def show_location_names():
     return await bot.say(response)
 
 # Command: Adds minecraft location then store it into database
-# Usage: !add_location name x y z
+# Usage: /add_location name x y z
 @bot.command()
 async def add_location(name, x, y, z):
     x, y, z = map(int, [x, y, x])
@@ -416,7 +414,7 @@ async def add_location(name, x, y, z):
     return await bot.say("I've added {} to the database.".format(name))
 
 # Command: Shows minecraft location in the database
-# Usage: !show_locations name
+# Usage: /show_locations name
 @bot.command()
 async def show_locations(name):
     location = db.child("minecraft").child("locations").child(name).get()
@@ -424,7 +422,21 @@ async def show_locations(name):
     response = "{} is at X {}, Y {}, Z {}".format(name, x, y, z)
     return await bot.say(response)
 
-	
+# Command: Allows user to create a new database or add new entry
+# Usage: /newEntry Pokemon Electric Pikachu
+@bot.command()
+async def newEntry(dbname, name, entry):
+	db.child("Discord").child(dbname).update({name: "{}".format(entry)})
+	updateSuccess = "The database, {}, has been updated sucessfully with entry, {}: {}.".format(dbname, name, entry)
+	return await bot.say(updateSuccess)
+
+# Command: Returns all of the database names stored in Pyrebase
+# Usage: /alldb
+@bot.command()
+async def alldb():	
+    getAlldb = db.child("Discord").shallow().get()
+    allDatabases = "The databases that are available are:\n - {}".format("\n - ".join(getAlldb.val()))
+    return await bot.say(allDatabases)	
 	
 # Note to self: How to push data into database example
 
@@ -436,7 +448,6 @@ async def show_locations(name):
 # db = firebase.database()
 # db.child("minecraft").child("locations").update({"spawn": "0 0 0"})
 # db.child("minecraft").child("locations").update({"end portal": "35 134 50"})
-
 
 
 bot.run(configurations.BOT_TOKEN)
