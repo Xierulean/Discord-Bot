@@ -5,6 +5,13 @@
 # Program Description:      A general purpose bot that was created for Discord chat	
 ##########################################################################################
 
+07/31/17
+- Separated the commands in Bot.py into the following files based on functions so it will be easier to maintain
+	database.py:	All database/pyrebase related commands
+	help.py:		All help/search related commands
+	miscellaneous.py:	Miscellaneous text commands
+	music.py:		Music channel commands
+
 07/29/17
 - Added the following Pyrebase commands:
 	/newEntry: User can create a new database in pyrebase. This command can also be used to add entries into existing databases.

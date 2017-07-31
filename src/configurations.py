@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name:             Discord Bot
 # Author:                   DMCTruong
-# Last Updated:             July 29, 2017
+# Last Updated:             July 31, 2017
 # Program Description:      A general purpose bot that was created for Discord chat	
 ##########################################################################################
 
