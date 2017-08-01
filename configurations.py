@@ -1,8 +1,9 @@
 ##########################################################################################
-# Program Name:             Discord Bot
-# Author:                   DMCTruong
-# Last Updated:             July 31, 2017
-# Program Description:      A general purpose bot that was created for Discord chat	
+# Program Name :     Discord Bot
+# Author       :     DMCTruong
+# Last Updated :     August 1, 2017
+# License      :     MIT
+# Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
 
@@ -15,7 +16,7 @@
 # For more information about what commands the bot can use, type /commands or /help in 
 # the Discord chat.
 
-# <--------------------------------------------------------------------------------------->
+# <--------------------------- Important Configurations ---------------------------------->
 
 PREFIX = "/"
 
@@ -47,12 +48,15 @@ FIREBASE_INFO = {
 # it is only until you get all of the information needed to fill out the required data above.
 # https://firebase.google.com/docs/web/setup
 
-
-# <--------------------------------------------------------------------------------------->
+# <=======================================================================================>
+# If you are reading this, congratulations, you've just finished configurating the Bot 
+# and you are now ready to go! Just double click Bot.py and then type /commands in the 
+# Discord chat for the list of commands that the Bot can do!
+# <=======================================================================================>
 
 # Thank you for using DMCTruong's Discord Bot!
 
-# For support, please submit a "New Issue" to the link below and I will do my best to help
+# For support, please submit a "New Issue" to the link below and I will do my best to help.
 # https://github.com/DMCTruong/Discord-Bot/issues
 
 

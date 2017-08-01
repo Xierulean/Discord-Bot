@@ -1,8 +1,9 @@
 ##########################################################################################
-# Program Name:     Discord Bot
-# Author:           DMCTruong
-# Last Updated:     July 31, 2017
-# Description:      A general purpose bot written for Discord
+# Program Name :     Discord Bot
+# Author       :     DMCTruong
+# Last Updated :     August 1, 2017
+# License      :     MIT
+# Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
 import discord
@@ -36,21 +37,36 @@ killResponses = [
     " gave %s a bearhug!"
     ]
 
-
 class Miscellaneous:
 	def __init__(self, bot):
 		self.bot = bot
 	
-	# Command: Make the bot pick a choice in the form of: choice1,choice2
+	# Command: "8ball"
+	@bot.command(pass_context=True, aliases=["8ball"])
+	async def ask(self, ctx):
+		"""Ask the bot a yes/no/maybe question."""
+		random.seed(time.time())
+		askResponse = eightBallResponses[random.randrange(len(eightBallResponses))]
+		await self.bot.say(ctx.message.author.mention + " " + askResponse)
+		
+	# Command: Hug someone or yourself
+	# Usage Example: /hug @mention_user 
 	@bot.command(pass_context=True)
-	async def pick(self, ctx, *, choices: str):
-		choicesArr = choices.split(" or ")
-		chosen = choicesArr[random.randrange(len(choicesArr))]
-		await self.bot.say(ctx.message.author.mention + ": I choose " + chosen)
+	async def hug(self, ctx, *, member: discord.Member=None):
+		"""Hug someone or yourself"""
+		if member is None:
+			await self.bot.say(ctx.message.author.mention + " gave a hug.")
+		else:
+			if member.id == ctx.message.author.id:
+				await self.bot.say("A bear gave " + member.mention + " a bear hug.")
+			else:
+				await self.bot.say(member.mention + " has been hugged by " + ctx.message.author.mention + ".")  
 		
 	# Command: Playfully interact with a member
+	# Usage Example: /kill @mention_user
 	@bot.command(pass_context=True)
 	async def kill(self, ctx, *, member: discord.Member=None):
+		"""Playfully interact with a member."""
 		if member is None:
 			await self.bot.say(ctx.message.author.mention + ": I cannot kill someone unless you tell me who you want to kill!")
 			return
@@ -65,23 +81,22 @@ class Miscellaneous:
 			await self.bot.say(ctx.message.author.mention + ": Why do you want me to kill you?")
 		else: 
 			random.seed(time.time())
-			choiceResponse = killResponses[random.randrange(len(killResponses))] % member.mention
+			choiceResponse = killResponses[random.randrange(len(configurations.killResponses))] % member.mention
 			await self.bot.say(ctx.message.author.mention + " " + choiceResponse)
- 
-	# Command: Hug someone or yourself
+
+	# Command: Make the bot pick a choice in the form of: choice1 or choice2 or choice3 or etc ...
+	# Usage Example: /pick red or blue or pink
 	@bot.command(pass_context=True)
-	async def hug(self, ctx, *, member: discord.Member=None):
-		if member is None:
-			await self.bot.say(ctx.message.author.mention + " gave a hug.")
-		else:
-			if member.id == ctx.message.author.id:
-				await self.bot.say("A bear gave " + member.mention + " a bear hug.")
-			else:
-				await self.bot.say(member.mention + " has been hugged by " + ctx.message.author.mention + ".")    
+	async def pick(self, ctx, *, choices: str):
+		"""Pick between given choices"""
+		choicesArr = choices.split(" or ")
+		chosen = choicesArr[random.randrange(len(choicesArr))]
+		await self.bot.say(ctx.message.author.mention + ": I choose " + chosen)			
 			
 	# Command: Add a funny prefix to everyone's nickname in the server as a joke
 	@bot.command(pass_context=True)
 	async def trollEveryone(self, ctx):
+		"""Add a funny prefix to everyone's nickname as joke"""
 		for member in ctx.message.server.members:
 			try:
 				random.seed(time.time())
@@ -94,16 +109,10 @@ class Miscellaneous:
 	# Command: Return everyone's nickname in the server back to normal after using /trollEveryone command
 	@bot.command(pass_context=True)
 	async def noMoreTroll(self, ctx):
+		"""Removes funny prefix from everyone's nickname from /trollEveryone"""
 		for member in ctx.message.server.members:
 			try:
 				await self.bot.change_nickname(member, member.name)
 			except discord.errors.Forbidden:
 				pass
 		await self.bot.say(ctx.message.author.mention + ": Everyone's nickname is now changed back to normal!")
-
-	# Command: "8ball"
-	@bot.command(pass_context=True)
-	async def ask(self, ctx):
-		random.seed(time.time())
-		askResponse = eightBallResponses[random.randrange(len(eightBallResponses))]
-		await self.bot.say(ctx.message.author.mention + " " + askResponse)
