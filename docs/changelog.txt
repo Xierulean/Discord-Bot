@@ -6,6 +6,12 @@
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
+08/07/17
+- Added /uptime command: A timer that gives the user a 15 minute warning when the bot needs to restart.
+	Since the bots are being hosted on Cloud9, the service automatically shutdown the bots after every 5 hours.
+	This command helps the user tell when it's almost time for the bots to be shutdown so the user may manually restart.
+	This command is temporary until a proper restart function is implemented with the timer.
+
 08/06/17
 - Updated the README, a demo of the bot is now hosted on Cloud9
 - The bot can now posts gifs when the /hug command is used. The gifs are stored on Webhost000

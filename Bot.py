@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 6, 2017
+# Last Updated :     August 7, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -31,6 +31,7 @@ from cogs import database
 from cogs import help
 from cogs import miscellaneous
 from cogs import music
+from cogs import timer
 			
 bot = commands.Bot(configurations.PREFIX) 
 
@@ -38,6 +39,9 @@ bot.add_cog(database.Database(bot))
 bot.add_cog(miscellaneous.Miscellaneous(bot))
 bot.add_cog(help.Help(bot))
 bot.add_cog(music.Music(bot))
+bot.add_cog(timer.Time(bot))
+
+#run_timer = timer.Time();
 
 print("Please wait while the Bot logs in ...")
 
@@ -49,9 +53,12 @@ async def on_ready():
 	print("ID Number: " + bot.user.id)
 	print("\nType /help in the Discord chat for the list of commands.")
 	print("=============================================")
+	
 	await bot.change_presence(game=discord.Game(name='/help for commands!'))
+	#run_timer.uptime()
+	
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=["disconnect"])
 async def shutdown():
 	"""Logs the bot off Discord and shuts it down"""
 	await bot.say("Shutting down, see you next time!")
