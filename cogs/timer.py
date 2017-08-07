@@ -31,6 +31,7 @@ class Time:
 		"""Timer for how long bot runs until need restart."""
 		now = time.time()
 		stop = now + 17100
+		print("The uptime timer is now starting. It is set to alarm 4 hours and 45 minutes from now.")
 		while True:
 			if time.time() > stop:
 				await self.bot.send_message(ctx.message.author, "The end is nigh, please be ready to restart me in 15 minutes.")
