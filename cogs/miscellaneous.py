@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 1, 2017
+# Last Updated :     August 6, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -11,6 +11,7 @@ from discord.ext import commands
 import asyncio
 import configurations
 import random
+from random import randint
 import time
 
 bot = commands.Bot(configurations.PREFIX)
@@ -49,20 +50,20 @@ class Miscellaneous:
 		askResponse = eightBallResponses[random.randrange(len(eightBallResponses))]
 		await self.bot.say(ctx.message.author.mention + " " + askResponse)
 		
-	# Command: Hug someone or yourself
 	# Usage Example: /hug @mention_user 
 	@bot.command(pass_context=True)
 	async def hug(self, ctx, *, member: discord.Member=None):
-		"""Hug someone or yourself"""
+		"""Give someone or yourself a hug!"""
+		generate_hug = randint(1, 16)
+		gif_url = "https://dmctruong.000webhostapp.com/.Discord/gifs-hugs/hug" + str(generate_hug) + ".gif"
 		if member is None:
-			await self.bot.say(ctx.message.author.mention + " gave a hug.")
+			await self.bot.say("*hugs*\n" + gif_url)
 		else:
 			if member.id == ctx.message.author.id:
-				await self.bot.say("A bear gave " + member.mention + " a bear hug.")
+				await self.bot.say("*hugs*\n" + gif_url)
 			else:
-				await self.bot.say(member.mention + " has been hugged by " + ctx.message.author.mention + ".")  
+				await self.bot.say(ctx.message.author.mention + " gave " + member.mention + " a hug!\n" + gif_url) 				
 		
-	# Command: Playfully interact with a member
 	# Usage Example: /kill @mention_user
 	@bot.command(pass_context=True)
 	async def kill(self, ctx, *, member: discord.Member=None):
@@ -84,7 +85,6 @@ class Miscellaneous:
 			choiceResponse = killResponses[random.randrange(len(configurations.killResponses))] % member.mention
 			await self.bot.say(ctx.message.author.mention + " " + choiceResponse)
 
-	# Command: Make the bot pick a choice in the form of: choice1 or choice2 or choice3 or etc ...
 	# Usage Example: /pick red or blue or pink
 	@bot.command(pass_context=True)
 	async def pick(self, ctx, *, choices: str):

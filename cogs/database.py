@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 1, 2017
+# Last Updated :     August 6, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -15,11 +15,12 @@ import pyrebase
 bot = commands.Bot(configurations.PREFIX)
 firebase = pyrebase.initialize_app(configurations.FIREBASE_INFO)
 db = firebase.database()
+storage = firebase.storage()
 
 class Database:
 	def __init__(self, bot):
 		self.bot = bot
-
+		
 	# Usage Example: /alldb
 	@bot.command(aliases=["db, DB, allDB, , showdb, showDB"])
 	async def alldb(self):
