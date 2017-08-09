@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 7, 2017
+# Last Updated :     August 8, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -41,7 +41,7 @@ bot.add_cog(help.Help(bot))
 bot.add_cog(music.Music(bot))
 bot.add_cog(timer.Time(bot))
 
-#run_timer = timer.Time();
+# run_timer = timer.Time();
 
 print("Please wait while the Bot logs in ...")
 
