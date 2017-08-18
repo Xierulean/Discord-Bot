@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 8, 2017
+# Last Updated :     August 18, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -15,14 +15,11 @@ import time
 # Todo:
 #	Add a function that lets the bot returns the time and date
 #	This cog will also used for reminders
+#	Repurpose the timer for a different function.
 
 bot = commands.Bot(configurations.PREFIX)
 
 class Time:
-	# The bot is currently being hosted on Cloud9. Every 5 hours, the service will stop the bot.
-	# This method is to help keep track of when it is close to the time that the bot shuts down
-	# so that the bot can restart without much delay.
-	
 	def __init__(self, bot):
 		self.bot = bot
 	
@@ -34,6 +31,6 @@ class Time:
 		print("The uptime timer is now starting. It is set to alarm 4 hours and 45 minutes from now.")
 		while True:
 			if time.time() > stop:
-				await self.bot.send_message(ctx.message.author, "The end is nigh, please be ready to restart me in 15 minutes.")
-				return print("The end is nigh, please be ready to restart me 15 minutes.")
+				await self.bot.send_message(ctx.message.author, "The end is near, please be ready to restart me in 15 minutes.")
+				return print("The end is near, please be ready to restart me 15 minutes.")
 				

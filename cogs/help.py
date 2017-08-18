@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 8, 2017
+# Last Updated :     August 18, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -27,4 +27,5 @@ class Help:
 			"&check_keywords=yes&area=default".format(
 			urlencode({'q': ' '.join(args)})
 			))
+		print(url)
 		return await self.bot.say(url)

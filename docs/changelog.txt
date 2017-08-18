@@ -1,10 +1,17 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 8, 2017
+# Last Updated :     August 18, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
+
+08/18/17
+- Only the owner can use the /shutdown and /restart command
+- Added two commands:
+	/restart:     Restarts the bot
+	/join_date: Gives user's server join date	
+- Added console print statements for debugging purposes
 
 08/07/17
 - Moved the bots from Cloud9 to PythonAnywhere

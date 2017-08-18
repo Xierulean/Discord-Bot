@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 8, 2017
+# Last Updated :     August 18, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -48,6 +48,7 @@ class Miscellaneous:
 		"""Ask the bot a yes/no/maybe question."""
 		random.seed(time.time())
 		askResponse = eightBallResponses[random.randrange(len(eightBallResponses))]
+		print(ctx.message.author.mention + " " + askResponse)
 		await self.bot.say(ctx.message.author.mention + " " + askResponse)
 		
 	# Usage Example: /hug @mention_user 
@@ -57,11 +58,14 @@ class Miscellaneous:
 		generate_hug = randint(1, 16)
 		gif_url = "https://dmctruong.000webhostapp.com/.Discord/gifs-hugs/hug" + str(generate_hug) + ".gif"
 		if member is None:
+			print("*hugs*\n" + gif_url)
 			await self.bot.say("*hugs*\n" + gif_url)
 		else:
 			if member.id == ctx.message.author.id:
+				print("*hugs*\n" + gif_url)
 				await self.bot.say("*hugs*\n" + gif_url)
 			else:
+				print(ctx.message.author.mention + " gave " + member.mention + " a hug!\n" + gif_url)
 				await self.bot.say(ctx.message.author.mention + " gave " + member.mention + " a hug!\n" + gif_url) 				
 		
 	# Usage Example: /kill @mention_user
@@ -69,20 +73,26 @@ class Miscellaneous:
 	async def kill(self, ctx, *, member: discord.Member=None):
 		"""Playfully interact with a member."""
 		if member is None:
+			print(ctx.message.author.mention + ": I cannot kill someone unless you tell me who you want to kill!")
 			await self.bot.say(ctx.message.author.mention + ": I cannot kill someone unless you tell me who you want to kill!")
 			return
 		
 		if member.id == configurations.BOT_ID:
+			print(ctx.message.author.mention + ": You can't kill me!")
 			await self.bot.say(ctx.message.author.mention + ": You can't kill me!")
 		elif member.id == configurations.BOT_OWNER_ID and member.id == ctx.message.author.id:
+			print(ctx.message.author.mention + ": A-Are you sure you want me to kill you mom?")
 			await self.bot.say(ctx.message.author.mention + ": A-Are you sure you want me to kill you mom?")
 		elif member.id == configurations.BOT_OWNER_ID:
+			print("You can't kill my master!")
 			await self.bot.say("You can't kill my master!")
 		elif member.id == ctx.message.author:
+			print(ctx.message.author.mention + ": Why do you want me to kill you?")
 			await self.bot.say(ctx.message.author.mention + ": Why do you want me to kill you?")
 		else: 
 			random.seed(time.time())
 			choiceResponse = killResponses[random.randrange(len(configurations.killResponses))] % member.mention
+			print(ctx.message.author.mention + " " + choiceResponse)
 			await self.bot.say(ctx.message.author.mention + " " + choiceResponse)
 
 	# Usage Example: /pick red or blue or pink
@@ -91,6 +101,7 @@ class Miscellaneous:
 		"""Pick between given choices"""
 		choicesArr = choices.split(" or ")
 		chosen = choicesArr[random.randrange(len(choicesArr))]
+		print(ctx.message.author.mention + ": I choose " + chosen)
 		await self.bot.say(ctx.message.author.mention + ": I choose " + chosen)			
 			
 	# Command: Add a funny prefix to everyone's nickname in the server as a joke
@@ -104,6 +115,7 @@ class Miscellaneous:
 				await self.bot.change_nickname(member, addPrefix + member.name)
 			except discord.errors.Forbidden:
 				pass
+		print(ctx.message.author.mention + ": Everyone's nickname is changed!! Buahahaha")
 		await self.bot.say(ctx.message.author.mention + ": Everyone's nickname is changed!! Buahahaha")
 	
 	# Command: Return everyone's nickname in the server back to normal after using /trollEveryone command
@@ -115,4 +127,5 @@ class Miscellaneous:
 				await self.bot.change_nickname(member, member.name)
 			except discord.errors.Forbidden:
 				pass
+		print(ctx.message.author.mention + ": Everyone's nickname is now changed back to normal!")
 		await self.bot.say(ctx.message.author.mention + ": Everyone's nickname is now changed back to normal!")
