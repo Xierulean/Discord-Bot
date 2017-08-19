@@ -8,6 +8,21 @@ If you would like to invite the bot to your server, click the link below!
 
 https://discordapp.com/oauth2/authorize?client_id=343639761900273666&scope=bot
 
+# Table of Contents
+
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Commands](#commands)
+  * [Database](#database)
+  * [Help](#help)
+  * [Miscellaneous](#miscellaneous)
+  * [Music](#music)
+  * [Time](#time)
+  * [No Category](#no-category)
+- [FAQ](#faq)
+- [Support](#support)
+- [Contribution](#contribution)
+
 # Requirements
 
 1. Python
