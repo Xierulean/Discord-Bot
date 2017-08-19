@@ -29,36 +29,74 @@ Note: For this next section, if typing python3 does not work, try typing just py
 
 # Commands
 
-| Category		| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| Database		| /newEntry		| Add a database entry or create new database.					| /newEntry database_name category information 	| /newdb, /newDB, /entry, /insert		|
-| Database		| /alldb		| Give list of all databases saved. 							| /alldb										| /db, /DB, /allDB, /showdb, /showDB	|
-| Help			| /pyhelp		| Search in the Python website.									| /pyhelp Strings								| /py_help, /phy, /python_help			| 
-| Miscellaneous	| /ask			| Ask the bot a yes/no/maybe question.							| /ask Is this bot awesome?						| /8ball								|
-| Miscellaneous	| /pick			| Pick between given choices									| /pick red or blue								| None									|
-| Miscellaneous	| /kill			| Playfully interact with a member.								| /kill @User_name								| None									|
-| Miscellaneous	| /hug			| Give someone or yourself a hug!								| /hug @User_name								| None									|
-| Miscellaneous	| /trollEveryone	| Add a funny prefix to everyone's nickname as joke			| /trollEveryone								| None									|
-| Miscellaneous	| /noMoreTroll	| Removes funny prefix from everyone's nickname	from /trollEveryone command.	| /noMoreTroll		| None									|
-| Music			| /pause			| Pauses the currently played song.							| /pause										| None									|
-| Music			| /volume		| Sets the volume of the currently playing song.				| /volume 60									| None									|
-| Music			| /play			| Plays a song.													| /play youtube_link_here						| None									|
-| Music			| /join			| Joins a voice channel.										| /join											| None									|
-| Music			| /resume		| Resumes the currently played song.							| /resume										| None									|
-| Music			| /skip			| Vote to skip a song.											| /skip											| None									|
-| Music			| /summon		| Summons the bot to join your voice channel.					| /summon										| None									|
-| Music			| /stop			| Stops playing audio and leaves the voice channel.				| /stop											| None									|
-| Music			| /playing		| Shows info about the currently played song.					| /playing										| None									|
-| Time			| /uptime 		| Timer for how long bot runs until need restart.				| /uptime										| None									|
-| No Category	| /join_date	| Gives the user's server join date								| /join_date									| None									|
-| No Category	| /restart		| Restarts the bot. Only the bot owner can use this command.	| /restart										| None									|
-| No Category	| /shutdown		| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.		| /shutdown			| /disconnect							|
-| No Category	| /help			| Shows all of the commands that the bot can do.				| /help											| None									|
+The following are the commands that the bot can perform in their respective categories.
+
+## Database
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /newEntry		| Add a database entry or create new database.					| /newEntry database_name category information 	| /newdb, /newDB, /entry, /insert		|
+| /alldb		| Give list of all databases saved. 							| /alldb										| /db, /DB, /allDB, /showdb, /showDB	|
+
+## Help
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /pyhelp		| Search in the Python website.									| /pyhelp Strings								| /py_help, /phy, /python_help			| 
+
+## Miscellaneous
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /ask			| Ask the bot a yes/no/maybe question.							| /ask Is this bot awesome?						| /8ball								|
+| /pick			| Pick between given choices									| /pick red or blue								| None									|
+| /kill			| Playfully interact with a member.								| /kill @User_name								| None									|
+| /hug			| Give someone or yourself a hug!								| /hug @User_name								| None									|
+| /trollEveryone	| Add a funny prefix to everyone's nickname as joke			| /trollEveryone								| None									|
+| /noMoreTroll	| Removes funny prefix from everyone's nickname	from /trollEveryone command.	| /noMoreTroll		| None									|
+
+## Music
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /pause		| Pauses the currently played song.							| /pause										| None									|
+| /volume		| Sets the volume of the currently playing song.				| /volume 60									| None									|
+| /play			| Plays a song.													| /play youtube_link_here						| None									|
+| /join			| Joins a voice channel.										| /join											| None									|
+| /resume		| Resumes the currently played song.							| /resume										| None									|
+| /skip			| Vote to skip a song.											| /skip											| None									|
+| /summon		| Summons the bot to join your voice channel.					| /summon										| None									|
+| /stop			| Stops playing audio and leaves the voice channel.				| /stop											| None									|
+| /playing		| Shows info about the currently played song.					| /playing										| None									|
+
+## Time
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /uptime 		| Timer for how long bot runs until need restart.				| /uptime										| None									|
+
+## No Category
+
+| Command		| Command Description 											| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
+| /join_date	| Gives the user's server join date								| /join_date									| None									|
+| /restart		| Restarts the bot. Only the bot owner can use this command. Note: At the moment the restart command will only work for Windows.	| /restart										| None									|
+| /shutdown		| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.		| /shutdown			| /disconnect							|
+| /help			| Shows all of the commands that the bot can do.				| /help											| None									|
 
 # FAQ
 
 1. My bot was running fine a few days ago but lately, it suddenly stopped working and gave some errors about missing modules or cogs.
 - If the bot reports an error related to "cogs" or "missing modules", try to reinstall the bot by following the [installation instructions](#installation) or only reinstall the parts that is giving the error. Reinstalling may fix the problem because dependencies may occasionally become out of date or some files may have gotten corrupted.
+
+# Support
+
+If there are any questions or issues with installation, please open an issue here: https://github.com/DMCTruong/Discord-Bot/issues
+It is recommended that the following information is included before submitting an issue so that the issue may be resolved quicker.
+
+1. The goal that is trying to be achieved. What was the expected outcome?
+2. What actually happened? If there was an error message, what was the error message?
+3. If the problem is related to implementing a feature, please also include the code in question.
 
 # Contribution
 
