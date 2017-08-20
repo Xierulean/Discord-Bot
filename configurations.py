@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 19, 2017
+# Last Updated :     August 20, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -13,15 +13,15 @@
 # Once all of the following information is filled out, the bot will be ready to use. Just 
 # double click on Bot.py and you will be able to use all of the bot commands in discord! 
 
-# For more information about what commands the bot can use, type /commands or /help in 
+# For more information about what commands the bot can use, type ::help in 
 # the Discord chat.
 
 # <--------------------------- Important Configurations ---------------------------------->
 
-PREFIX = "/"
+PREFIX = "::"
 
-# Currently, the default command prefix is "/"
-# For example: /echo Hello World
+# Currently, the default command prefix is "::"
+# For example: ::echo Hello World
 # You are welcome to change the command prefix to anything you wish.
 
 BOT_OWNER_ID = "Bot Owner's ID here"

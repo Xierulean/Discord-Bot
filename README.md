@@ -17,11 +17,14 @@ https://discordapp.com/oauth2/authorize?client_id=343639761900273666&scope=bot
   * [Help](#help)
   * [Miscellaneous](#miscellaneous)
   * [Music](#music)
+  * [Owner Only](#owner-only)
   * [Time](#time)
   * [No Category](#no-category)
 - [FAQ](#faq)
 - [Support](#support)
 - [Contribution](#contribution)
+  * [Code Style](#code-style)
+
 
 # Requirements
 
@@ -48,56 +51,58 @@ The following are the commands that the bot can perform in their respective cate
 
 ## Database
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /newEntry		| Add a database entry or create new database.					| /newEntry database_name category information 	| /newdb, /newDB, /entry, /insert		|
-| /alldb		| Give list of all databases saved. 							| /alldb										| /db, /DB, /allDB, /showdb, /showDB	|
+| Command		| Command Description 								| Example										| Command Aliases							|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------	|
+| ::newEntry	| Add a database entry or create new database.		| ::newEntry database_name category information | ::newdb, ::newDB, ::entry, ::insert		|
+| ::alldb		| Give list of all databases saved. 				| ::alldb										| ::db, ::DB, ::allDB, ::showdb, ::showDB	|
 
 ## Help
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /pyhelp		| Search in the Python website.									| /pyhelp Strings								| /py_help, /phy, /python_help			| 
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::pyhelp		| Search in the Python website.						| /pyhelp Strings								| ::py_help, ::phy, ::python_help		| 
 
 ## Miscellaneous
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /ask			| Ask the bot a yes/no/maybe question.							| /ask Is this bot awesome?						| /8ball								|
-| /pick			| Pick between given choices									| /pick red or blue								| None									|
-| /kill			| Playfully interact with a member.								| /kill @User_name								| None									|
-| /hug			| Give someone or yourself a hug!								| /hug @User_name								| None									|
-| /trollEveryone	| Add a funny prefix to everyone's nickname as joke			| /trollEveryone								| None									|
-| /noMoreTroll	| Removes funny prefix from everyone's nickname	from /trollEveryone command.	| /noMoreTroll		| None									|
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::ask			| Ask the bot a yes/no/maybe question.				| ::ask Is this bot awesome?					| ::8ball								|
+| ::pick			| Pick between given choices. The choices are separated by " or "								| ::pick red or blue or green			| None									|
+| ::hug			| Give someone or yourself a hug!					| ::hug @User_name								| None									|
 
 ## Music
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /pause		| Pauses the currently played song.							| /pause										| None									|
-| /volume		| Sets the volume of the currently playing song.				| /volume 60									| None									|
-| /play			| Plays a song.													| /play youtube_link_here						| None									|
-| /join			| Joins a voice channel.										| /join											| None									|
-| /resume		| Resumes the currently played song.							| /resume										| None									|
-| /skip			| Vote to skip a song.											| /skip											| None									|
-| /summon		| Summons the bot to join your voice channel.					| /summon										| None									|
-| /stop			| Stops playing audio and leaves the voice channel.				| /stop											| None									|
-| /playing		| Shows info about the currently played song.					| /playing										| None									|
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::pause		| Pauses the currently played song.					| ::pause										| None									|
+| ::volume		| Sets the volume of the currently playing song.	| ::volume 60									| None									|
+| ::play		| Plays a song.										| ::play youtube_link_here						| None									|
+| ::join		| Joins a voice channel.							| ::join										| None									|
+| ::resume		| Resumes the currently played song.				| ::resume										| None									|
+| ::skip		| Vote to skip a song.								| ::skip										| None									|
+| ::summon		| Summons the bot to join your voice channel.		| ::summon										| None									|
+| ::stop		| Stops playing audio and leaves the voice channel.	| ::stop										| None									|
+| ::playing		| Shows info about the currently played song.		| ::playing										| None									|
+
+## Owner Only
+
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::restart		| Restarts the bot. Only the bot owner can use this command. Note: At the moment the restart command will only work for Windows.	| ::restart				| None									|
+| ::shutdown	| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.												| ::shutdown			| ::disconnect							|
 
 ## Time
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /uptime 		| Timer for how long bot runs until need restart.				| /uptime										| None									|
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::uptime 		| Timer for how long bot runs until need restart.	| ::uptime										| None									|
 
 ## No Category
 
-| Command		| Command Description 											| Example										| Command Aliases						|
-|:--------------|:--------------------------------------------------			|:----------------------------------------------|:--------------------------------------|
-| /join_date	| Gives the user's server join date								| /join_date									| None									|
-| /restart		| Restarts the bot. Only the bot owner can use this command. Note: At the moment the restart command will only work for Windows.	| /restart										| None									|
-| /shutdown		| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.		| /shutdown			| /disconnect							|
-| /help			| Shows all of the commands that the bot can do.				| /help											| None									|
+| Command		| Command Description 								| Example										| Command Aliases						|
+|:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
+| ::join_date	| Gives the user's server join date					| ::join_date									| None									|
+| ::help		| Shows all of the commands that the bot can do.	| ::help										| None									|
 
 # FAQ
 
@@ -116,3 +121,7 @@ It is recommended that the following information is included before submitting a
 # Contribution
 
 If you would like to help out with the bot. Feel free to fork the project, add your changes, then create a pull request.
+
+## Code Style
+
+The indentation standard for this project is 4 spaces.

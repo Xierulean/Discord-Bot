@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 19, 2017
+# Last Updated :     August 20, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -18,23 +18,23 @@ db = firebase.database()
 storage = firebase.storage()
 
 class Database:
-	def __init__(self, bot):
-		self.bot = bot
+    def __init__(self, bot):
+        self.bot = bot
 		
-	# Usage Example: /alldb
-	@bot.command(aliases=["db, DB, allDB, , showdb, showDB"])
-	async def alldb(self):
-		"""Give list of all databases saved"""
-		getAlldb = db.child("Discord").shallow().get()
-		allDatabases = "The databases that are available are:\n - {}".format("\n - ".join(getAlldb.val()))
-		print(allDatabases)
-		return await self.bot.say(allDatabases)	
-		
-	# Usage Example: /newEntry Pokemon Electric Pikachu
-	@bot.command(aliases=["newdb, newDB, entry, insert"])
-	async def newEntry(self, dbname, name, entry):
-		"""Add a database entry or create new database"""
-		db.child("Discord").child(dbname).update({name: "{}".format(entry)})
-		updateSuccess = "The database, {}, has been updated sucessfully with entry, {}: {}.".format(dbname, name, entry)
-		print(updatesuccess)
-		return await self.bot.say(updateSuccess)
+    @bot.command(aliases=["db, DB, allDB, , showdb, showDB"])
+    async def alldb(self):
+        """Give list of all databases saved"""
+
+        getAlldb = db.child("Discord").shallow().get()
+        allDatabases = "The databases that are available are:\n - {}".format("\n - ".join(getAlldb.val()))		
+        print(allDatabases)
+        return await self.bot.say(allDatabases)	
+
+    @bot.command(aliases=["newdb, newDB, entry, insert"])
+    async def newEntry(self, dbname, name, entry):
+        """Add a database entry or create new database"""
+
+        db.child("Discord").child(dbname).update({name: "{}".format(entry)})
+        updateSuccess = "The database, {}, has been updated sucessfully with entry, {}: {}.".format(dbname, name, entry)
+        print(updatesuccess)
+        return await self.bot.say(updateSuccess)

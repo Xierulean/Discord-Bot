@@ -1,12 +1,19 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 19, 2017
+# Last Updated :     August 20, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
+08/20/17
+- Created new "owner _only" cog and moved the /restart and /shutdown commands to it.
+- Added more console print statements for debugging purposes
+- Changed command prefix from "/" to "::"
+- Removed /trollEveryone, /noMoreTroll, and /kill commands
+
 08/19/17
+- Added Table of Contents with working links
 - Updated Readme
 
 08/18/17

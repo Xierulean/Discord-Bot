@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 19, 2017
+# Last Updated :     August 20, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -15,17 +15,17 @@ import configurations
 bot = commands.Bot(configurations.PREFIX)
 
 class Help:
-	def __init__(self, bot):
-		self.bot = bot	
+    def __init__(self, bot):
+        self.bot = bot	
 
-	# Usage Example: /py_help Strings
-	@bot.command(aliases=["py_help", "pyh", "python_help"])
-	async def pyhelp(self, *args):
-		"""Search in the Python website."""
-		print(args)
-		url = ("https://docs.python.org/3/search.html?{}"
-			"&check_keywords=yes&area=default".format(
-			urlencode({'q': ' '.join(args)})
-			))
-		print(url)
-		return await self.bot.say(url)
+    @bot.command(aliases=["py_help", "pyh", "python_help"])
+    async def pyhelp(self, *args):
+        """Search in the Python website."""
+
+        print(args)
+        url = ("https://docs.python.org/3/search.html?{}"
+            "&check_keywords=yes&area=default".format(
+            urlencode({'q': ' '.join(args)})
+            ))
+        print(url)
+        return await self.bot.say(url)
