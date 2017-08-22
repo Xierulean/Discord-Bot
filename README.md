@@ -53,8 +53,8 @@ The following are the commands that the bot can perform in their respective cate
 
 | Command		| Command Description 								| Example										| Command Aliases							|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------	|
-| ::newEntry	| Add a database entry or create new database.		| ::newEntry database_name category information | ::newdb, ::newDB, ::entry, ::insert		|
 | ::alldb		| Give list of all databases saved. 				| ::alldb										| ::db, ::DB, ::allDB, ::showdb, ::showDB	|
+| ::newEntry	| Add a database entry or create new database.		| ::newEntry database_name category information | ::newdb, ::newDB, ::entry, ::insert		|
 
 ## Help
 
@@ -67,22 +67,22 @@ The following are the commands that the bot can perform in their respective cate
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
 | ::ask			| Ask the bot a yes/no/maybe question.				| ::ask Is this bot awesome?					| ::8ball								|
-| ::pick			| Pick between given choices. The choices are separated by " or "								| ::pick red or blue or green			| None									|
 | ::hug			| Give someone or yourself a hug!					| ::hug @User_name								| None									|
+| ::pick			| Pick between given choices. The choices are separated by " or "								| ::pick red or blue or green			| None									|
 
 ## Music
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::pause		| Pauses the currently played song.					| ::pause										| None									|
-| ::volume		| Sets the volume of the currently playing song.	| ::volume 60									| None									|
-| ::play		| Plays a song.										| ::play youtube_link_here						| None									|
 | ::join		| Joins a voice channel.							| ::join										| None									|
+| ::pause		| Pauses the currently played song.					| ::pause										| None									|
+| ::play		| Plays a song.										| ::play youtube_link_here						| None									|
+| ::playing		| Shows info about the currently played song.		| ::playing										| None									|
 | ::resume		| Resumes the currently played song.				| ::resume										| None									|
 | ::skip		| Vote to skip a song.								| ::skip										| None									|
-| ::summon		| Summons the bot to join your voice channel.		| ::summon										| None									|
 | ::stop		| Stops playing audio and leaves the voice channel.	| ::stop										| None									|
-| ::playing		| Shows info about the currently played song.		| ::playing										| None									|
+| ::summon		| Summons the bot to join your voice channel.		| ::summon										| None									|
+| ::volume		| Sets the volume of the currently playing song.	| ::volume 60									| None									|
 
 ## Owner Only
 
@@ -95,7 +95,7 @@ The following are the commands that the bot can perform in their respective cate
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::uptime 		| Timer for how long bot runs until need restart.	| ::uptime										| None									|
+| ::date 		| Returns the current date and time					| ::date										| None									|
 
 ## No Category
 
@@ -116,11 +116,13 @@ It is recommended that the following information is included before submitting a
 
 1. The goal that is trying to be achieved. What was the expected outcome?
 2. What actually happened? If there was an error message, what was the error message?
-3. If the problem is related to implementing a feature, please also include the code in question.
+3. What is the version of the CLI you are using?
+4. If the problem is related to implementing a feature, please also include the code in question.
 
 # Contribution
 
-If you would like to help out with the bot. Feel free to fork the project, add your changes, then create a pull request.
+If you would like to help out with the bot, feel free to fork the project, add your changes, then create a pull request.
+Plus, I'm also looking for a new bot logo!
 
 ## Code Style
 

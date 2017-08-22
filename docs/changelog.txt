@@ -1,10 +1,15 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 20, 2017
+# Last Updated :     August 21, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
+
+08/21/17
+- Changed /uptime command to /date
+	/date:	Gives the current date and time
+- Changed "cogs" folder name to "modules"
 
 08/20/17
 - Created new "owner _only" cog and moved the /restart and /shutdown commands to it.

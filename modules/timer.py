@@ -1,31 +1,32 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 20, 2017
+# Last Updated :     August 21, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
 import discord
 from discord.ext import commands
-from urllib.parse import urlencode
 import asyncio
 import configurations
+import datetime
+import subprocess
+import time
+from time import localtime, strftime
 
 bot = commands.Bot(configurations.PREFIX)
 
-class Help:
+class Time:
     def __init__(self, bot):
-        self.bot = bot	
+        self.bot = bot
+	
+    @bot.command(pass_context=True)
+    async def date(self):
+        """Returns the current date and time"""
 
-    @bot.command(aliases=["py_help", "pyh", "python_help"])
-    async def pyhelp(self, *args):
-        """Search in the Python website."""
+        date_time = strftime("The date is %A, %B %d, %Y at %I:%M %p in %Z.", localtime())
+        print(date_time)
+        await self.bot.say(date_time)
 
-        print(args)
-        url = ("https://docs.python.org/3/search.html?{}"
-            "&check_keywords=yes&area=default".format(
-            urlencode({'q': ' '.join(args)})
-            ))
-        print(url)
-        return await self.bot.say(url)
+    #async def alarm(self, ctx, *, mins: int, member: discord.Member=None):

@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 20, 2017
+# Last Updated :     August 21, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -16,6 +16,7 @@
 #	- Add a better tutorial on how to install and get the keys for the configurations
 #	- Add better documentation of the code
 #	- Return the user's avatar?
+#	- Update pyrebase commands
 
 
 
@@ -29,12 +30,12 @@ from discord.ext import commands
 import asyncio
 import configurations
 
-from cogs import database
-from cogs import help
-from cogs import miscellaneous
-from cogs import music
-from cogs import owner_only
-from cogs import timer
+from modules import database
+from modules import help
+from modules import miscellaneous
+from modules import music
+from modules import owner_only
+from modules import timer
 			
 bot = commands.Bot(configurations.PREFIX) 
 
