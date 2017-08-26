@@ -1,10 +1,16 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 21, 2017
+# Last Updated :     August 25, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
+
+08/25/17
+- Adjusted code style indentation for all files.
+- Added logging options in configurations.py
+- Changed "::" command prefix to ">>"
+- Moved /join_date from Bot.py to Timer.py
 
 08/21/17
 - Changed /uptime command to /date

@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 21, 2017
+# Last Updated :     August 25, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -30,3 +30,11 @@ class Time:
         await self.bot.say(date_time)
 
     #async def alarm(self, ctx, *, mins: int, member: discord.Member=None):
+
+    @bot.command(pass_context=True)
+    async def join_date(self, ctx, member: discord.Member = None):
+        """Gives user's server join date"""
+
+        if member is None:
+            member = ctx.message.author
+            await self.bot.say('{0} joined the server on {0.joined_at}'.format(member))

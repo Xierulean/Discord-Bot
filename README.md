@@ -45,7 +45,7 @@ Note: For this next section, if typing python3 does not work, try typing just py
 5. After that, open /docs/configurations.py (preferably with Notepad++ or a similar program)and the tutorials in the file will help you retrieve the information that the bot requires to run.
 6. Once all of the information in the configurations file is filled out, the bot is ready to run, double click Bot.py! For more information on what commands the bot can use, type /help in the Discord chat.
 
-# Commands
+# Command Categories
 
 The following are the commands that the bot can perform in their respective categories.
 

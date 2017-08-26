@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 21, 2017
+# Last Updated :     August 25, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -25,9 +25,11 @@ class Owner_Only:
         """Logs the bot off Discord and shuts it down"""
 
         if ctx.message.author.id == configurations.BOT_OWNER_ID:
+            print("Shutting down, see you next time!")
             await self.bot.say("Shutting down, see you next time!")
             await self.bot.close()
         else:
+            print("Sorry, only the bot owner can use this command.")
             await self.bot.say("Sorry, only the bot owner can use this command.")
 
     @bot.command(pass_context=True)
@@ -40,4 +42,5 @@ class Owner_Only:
             print("Bot is shutting down ...")
             await self.bot.close()
         else:
+            print("Sorry, only the bot owner can use this command.")
             await self.bot.say("Sorry, only the bot owner can use this command.")
