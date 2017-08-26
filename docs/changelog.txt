@@ -6,6 +6,9 @@
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
 
+08/26/17
+- Fixed the Readme to reflect 08/25/17 changes.
+
 08/25/17
 - Adjusted code style indentation for all files.
 - Added logging options in configurations.py

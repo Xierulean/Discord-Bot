@@ -53,56 +53,56 @@ The following are the commands that the bot can perform in their respective cate
 
 | Command		| Command Description 								| Example										| Command Aliases							|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------	|
-| ::alldb		| Give list of all databases saved. 				| ::alldb										| ::db, ::DB, ::allDB, ::showdb, ::showDB	|
-| ::newEntry	| Add a database entry or create new database.		| ::newEntry database_name category information | ::newdb, ::newDB, ::entry, ::insert		|
+| >>alldb		| Give list of all databases saved. 				| >>alldb										| >>db, >>DB, >>allDB, >>showdb, >>showDB	|
+| >>newEntry	| Add a database entry or create new database.		| >>newEntry database_name category information | >>newdb, >>newDB, >>entry, >>insert		|
 
 ## Help
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::pyhelp		| Search in the Python website.						| /pyhelp Strings								| ::py_help, ::phy, ::python_help		| 
+| >>pyhelp		| Search in the Python website.						| /pyhelp Strings								| >>py_help, >>phy, >>python_help		| 
 
 ## Miscellaneous
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::ask			| Ask the bot a yes/no/maybe question.				| ::ask Is this bot awesome?					| ::8ball								|
-| ::hug			| Give someone or yourself a hug!					| ::hug @User_name								| None									|
-| ::pick			| Pick between given choices. The choices are separated by " or "								| ::pick red or blue or green			| None									|
+| >>ask			| Ask the bot a yes/no/maybe question.				| >>ask Is this bot awesome?					| >>8ball								|
+| >>hug			| Give someone or yourself a hug!					| >>hug @User_name								| None									|
+| >>pick			| Pick between given choices. The choices are separated by " or "								| >>pick red or blue or green			| None									|
 
 ## Music
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::join		| Joins a voice channel.							| ::join										| None									|
-| ::pause		| Pauses the currently played song.					| ::pause										| None									|
-| ::play		| Plays a song.										| ::play youtube_link_here						| None									|
-| ::playing		| Shows info about the currently played song.		| ::playing										| None									|
-| ::resume		| Resumes the currently played song.				| ::resume										| None									|
-| ::skip		| Vote to skip a song.								| ::skip										| None									|
-| ::stop		| Stops playing audio and leaves the voice channel.	| ::stop										| None									|
-| ::summon		| Summons the bot to join your voice channel.		| ::summon										| None									|
-| ::volume		| Sets the volume of the currently playing song.	| ::volume 60									| None									|
+| >>join		| Joins a voice channel.							| >>join										| None									|
+| >>pause		| Pauses the currently played song.					| >>pause										| None									|
+| >>play		| Plays a song.										| >>play youtube_link_here						| None									|
+| >>playing		| Shows info about the currently played song.		| >>playing										| None									|
+| >>resume		| Resumes the currently played song.				| >>resume										| None									|
+| >>skip		| Vote to skip a song.								| >>skip										| None									|
+| >>stop		| Stops playing audio and leaves the voice channel.	| >>stop										| None									|
+| >>summon		| Summons the bot to join your voice channel.		| >>summon										| None									|
+| >>volume		| Sets the volume of the currently playing song.	| >>volume 60									| None									|
 
 ## Owner Only
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::restart		| Restarts the bot. Only the bot owner can use this command. Note: At the moment the restart command will only work for Windows.	| ::restart				| None									|
-| ::shutdown	| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.												| ::shutdown			| ::disconnect							|
+| >>restart		| Restarts the bot. Only the bot owner can use this command. Note: At the moment the restart command will only work for Windows.	| >>restart				| None									|
+| >>shutdown	| Logs the bot off Discord and shuts it down. Only the bot owner can use this command.												| >>shutdown			| >>disconnect							|
 
 ## Time
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::date 		| Returns the current date and time					| ::date										| None									|
+| >>date 		| Returns the current date and time					| >>date										| None									|
+| >>join_date	| Gives the user's server join date					| >>join_date									| None									|
 
 ## No Category
 
 | Command		| Command Description 								| Example										| Command Aliases						|
 |:--------------|:--------------------------------------------------|:----------------------------------------------|:--------------------------------------|
-| ::join_date	| Gives the user's server join date					| ::join_date									| None									|
-| ::help		| Shows all of the commands that the bot can do.	| ::help										| None									|
+| >>help		| Shows all of the commands that the bot can do.	| >>help										| None									|
 
 # FAQ
 
