@@ -1,10 +1,4 @@
-##########################################################################################
-# Program Name :     Discord Bot
-# Author       :     DMCTruong
-# Last Updated :     August 25, 2017
-# License      :     MIT
-# Description  :     A general purpose bot written for Discord               
-##########################################################################################
+# This is a modified version of playlist.py from https://github.com/Rapptz/discord.py
 
 import discord
 from discord.ext import commands

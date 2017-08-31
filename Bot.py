@@ -1,7 +1,7 @@
 ##########################################################################################
 # Program Name :     Discord Bot
 # Author       :     DMCTruong
-# Last Updated :     August 25, 2017
+# Last Updated :     August 31, 2017
 # License      :     MIT
 # Description  :     A general purpose bot written for Discord               
 ##########################################################################################
@@ -9,20 +9,14 @@
 
 # To do List:
 #	- Add a calculator
-#	- Add a log function
-#		Command log turned off by default
-#		Error log turned on by default
 #	- Add a translator: https://pypi.python.org/pypi/googletrans
 #	- Add a better tutorial on how to install and get the keys for the configurations
 #	- Add better documentation of the code
+#	- Add better documentation of installations
+#   - Redo the restart command
 #	- Return the user's avatar?
+#   - Simply the configuration file
 #	- Update pyrebase commands
-
-
-# Known Issues: Note move this to readme
-#	1. The bot seems to buffer a lot when playing music. 
-#		Hopefully, the issue and a solution will be found soon.
-#	- Solution: If the bot seems to be buffering, try changing the server location
 
 import discord
 from discord.ext import commands
@@ -47,8 +41,9 @@ if configurations.DISCORD_LOG in ["y", "Y", "yes", "Yes", "YES"]:
     logger.addHandler(handler)
 
 # if configurations.COMMAND_LOG in ["y", "Y", "yes", "Yes", "YES"]:
-
 # if configurations.ERROR_LOG in ["y", "Y", "yes", "Yes", "YES"]:
+
+
 
 # -------- Initialize the Bot --------
 

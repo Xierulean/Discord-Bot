@@ -8,6 +8,8 @@ If you would like to invite the bot to your server, click the link below!
 
 https://discordapp.com/oauth2/authorize?client_id=343639761900273666&scope=bot
 
+Note: When inviting the bot to your server, the amount of uptime that the bot have is dependent on its hosting service so there will be moments when it is offline, but the bot will be kept online as much as possible.
+
 # Table of Contents
 
 - [Requirements](#requirements)
