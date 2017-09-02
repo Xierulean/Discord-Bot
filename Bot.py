@@ -15,7 +15,6 @@
 #	- Add better documentation of installations
 #   - Redo the restart command
 #	- Return the user's avatar?
-#   - Simply the configuration file
 #	- Update pyrebase commands
 
 import discord

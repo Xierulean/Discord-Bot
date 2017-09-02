@@ -1,10 +1,14 @@
 #################################################################################
 # Program Name  :     Discord Bot
 # Author        :     DMCTruong
-# Last Updated  :     August 31, 2017
+# Last Updated  :     September 02, 2017
 # License       :     MIT
 # Description   :     A general purpose bot written for Discord               
 #################################################################################
+
+09/02/17
+- Updated Readme regarding Bot invitation.
+- Updated Bot Account
 
 08/31/17
 - Added a message in Readme about inviting the bot to server.

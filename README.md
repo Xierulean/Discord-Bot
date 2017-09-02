@@ -1,12 +1,13 @@
 # Discord-Bot
 
+![Development Period](https://img.shields.io/badge/Development-Alpha-orange.svg)
 [![Python Version](https://img.shields.io/badge/python-3.5-blue.svg)](https://www.python.org/downloads/release/python-351/)
 
 A simple bot created for Discord. The bot can perform basic functions such as play music in voice channels, silly text commands, create and store information into databases.
 
-If you would like to invite the bot to your server, click the link below!
+Mew is a demonstration bot, to try out the bot's commands, feel free to click the link below and invite Mew to your server! 
 
-https://discordapp.com/oauth2/authorize?client_id=343639761900273666&scope=bot
+https://discordapp.com/oauth2/authorize?client_id=353420001451180032&scope=bot
 
 Note: When inviting the bot to your server, the amount of uptime that the bot have is dependent on its hosting service so there will be moments when it is offline, but the bot will be kept online as much as possible.
 
