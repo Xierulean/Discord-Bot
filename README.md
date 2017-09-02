@@ -3,7 +3,7 @@
 ![Development Period](https://img.shields.io/badge/Development-Alpha-orange.svg)
 [![Python Version](https://img.shields.io/badge/python-3.5-blue.svg)](https://www.python.org/downloads/release/python-351/)
 
-A simple bot created for Discord. The bot can perform basic functions such as play music in voice channels, silly text commands, create and store information into databases.
+A simple bot created for Discord. The bot can perform basic functions such as play music in voice channels, silly text commands, create and store things into databases.
 
 Mew is a demonstration bot, to try out the bot's commands, feel free to click the link below and invite Mew to your server! 
 
@@ -13,9 +13,18 @@ Note: When inviting the bot to your server, the amount of uptime that the bot ha
 
 # Table of Contents
 
+- [Discord-Bot](#discord-bot)
+- [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Commands](#commands)
+  * [Installing Python and Pip](#installing-python-and-pip)
+  * [Installing Virtualenv](#installing-virtualenv)
+  * [Adding Path Variable for Virtualenv](#adding-path-variable-for-virtualenv)
+  * [Running Virtualenv](#running-virtualenv)
+  * [Installing the Requirements](#installing-the-requirements)
+  * [Setting up the Configurations](#setting-up-the-configurations)
+  * [Running the Bot](#running-the-bot)
+- [Command Categories](#command-categories)
   * [Database](#database)
   * [Help](#help)
   * [Miscellaneous](#miscellaneous)
@@ -31,22 +40,117 @@ Note: When inviting the bot to your server, the amount of uptime that the bot ha
 
 # Requirements
 
-1. Python
+1. Python 3.5
 2. Discord.py
 3. pyrebase
 4. youtube-dl
 
 # Installation
 
-1. Download and install the latest version of Python. Be sure to add Python's path to the Enviromental Variables!
+**Important:** Throughout the installation instructions, if typing ``python3`` or ``pip3`` does not work, try typing ``python`` or ``pip`` instead.
 
-Note: For this next section, if typing python3 does not work, try typing just python.
+## Installing Python and Pip
 
-2. Next, to install Discord.py, open a command line and type: python3 -m pip install -U discord.py[voice]
-3. Then, install pyrebase by typing the following in a command line: python3 pip install pyrebase
-4. Finally, download and install youtube-dl: python3 pip install --upgrade youtube_dl
-5. After that, open /docs/configurations.py (preferably with Notepad++ or a similar program)and the tutorials in the file will help you retrieve the information that the bot requires to run.
-6. Once all of the information in the configurations file is filled out, the bot is ready to run, double click Bot.py! For more information on what commands the bot can use, type /help in the Discord chat.
+If you have Python and Pip already installed, you may skip to [Step 3](#installing-virtualenv).
+
+1.	To begin, check to see if you have Python installed. To do this, type the command
+		<pre>python3 --version</pre>
+	If you get an answer similar to this, ``Python 3.4.3``, it means you already have Python installed.  
+     If not, you will need to install Python. Head over to Python's [download page](https://www.python.org/downloads/) and follow the installation instructions for your system.
+
+2.	Next, type ``pip3 --version`` to check if Pip is installed.  
+	You should receive an answer similar to this if Pip is installed.
+		<pre>pip 1.5.4 from /usr/lib/python3/dist-packages (python 3.4)</pre>
+	If not, then visit [this page](https://packaging.python.org/tutorials/installing-packages/#install-pip-setuptools-and-wheel) to install Pip.
+
+## Installing Virtualenv
+
+For Step 3 and 4, If you already know how to setup a virtual environment, please skip to [Step 6](#installing-the-requirements).
+
+**Note:** Because newer Versions are not backwards compatible, setting up a virtual environment is reccommended to avoid having the newer installations overwrite the existing ones.
+   
+3.	To install a virtual environment, type:
+    	<pre>pip3 install --user virtualenv</pre>
+    For Unix systems, if the command above does not work, try this command:
+    	<pre>sudo pip3 install virtualenv </pre>
+    Once the installation is complete, check to see if installation was successful:
+		<pre>virtualenv --version</pre>
+    If you receive Virtualenv's version number after typing the command, then skip to [Step 5](#running-virtualenv).
+    If not, proceed to [Step 4](#adding-path-variable-for-virtualenv).
+   
+## Adding Path Variable for Virtualenv
+
+4.	Open ``.bash_profile`` with an Text Editor of your choosing. Add Virtualenv's Path Variable to the file, save, and then source the file.
+
+**Adding Path Variable Example**:  
+Vim Text Editor will be used throughout this example, but any Text Editor will do.  
+First, open the ``.bash_profile`` by typing, ``vim ~/.bash_profile``.  
+Press ``i`` to go into Insert mode and then copy the following line into the file.
+	<pre>alias virtualenv3='~/Library/Python/VERSION_NUMBER/bin/virtualenv'</pre>
+Where it says ``VERSION_NUMBER``, replace it with the first two numbers of your Python Version.
+____
+>For example, let's say that your Python Version is ``Python 3.4.3``.  
+From ``Python 3.4.3`` replace ``VERSION_NUMBER`` with ``3.4`` which results:
+	<pre>alias virtualenv3='~/Library/Python/3.4/bin/virtualenv'</pre>
+Press ``ESC``, ``:``, ``x``, and then ``ENTER`` to save and exit the editor.  
+____
+Finally, type ``source ~/.bash_profile`` to finish up Step 4.  
+Check to see if Virtualenv is installed properly with ``virtualenv --version``.
+        
+## Running Virtualenv
+
+5.	Once you have virtualenv installed, it's time to make a virtual environment and run it. 
+
+Replace ``VIRTUALENV_FOLDER`` with the name of the folder where you want to create your virtual environment in.
+	<pre>cd VIRTUALENV_FOLDER/</pre>
+
+Replace ``VIRTUALENV_NAME`` with the name that you pick for your virtual environment.
+	<pre>virtualenv VIRTUALENV_NAME</pre>
+
+Do the same for this next command.
+    <pre>source VIRTUALENV_NAME/bin/activate</pre>
+
+____
+>Example:
+    <pre>
+    cd My_Virtualenv_Folder/
+    virtualenv My_Virtualenv
+    source My_Virtualenv/bin/activate
+    </pre>
+____
+        
+## Installing the Requirements
+
+Once everything is setup, it is time to install the Bot's requirements.
+
+6.	Installing **Python 3.5.1**: ``pip3 install python3.5``  
+	For Unix systems: ``sudo apt-get install python3.5``  
+7. Installing **Discord.py**: ``python3.5 -m pip install -U discord.py[voice]``  
+	For Unix systems: ``pip3 install -U discord.py[voice]``
+8. Installing **Pyrebase**: ``pip3 install pyrebase``
+9. Installing **youtube-dl**: ``pip3 install --upgrade youtube_dl``
+10. Download the bot files: ``clone https://github.com/DMCTruong/Discord-Bot.git``  
+
+If you don't have git installed.  
+	**Windows**:  
+    	https://git-scm.com/download/win  
+    **Ubuntu**:
+<pre>
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install git
+</pre>
+
+
+## Setting up the Configurations
+
+Finally, you are almost there! The configuration file just needs a few information.
+11. Begin by opening configurations.py preferably with Notepad++, Vim or a similar program.
+12. Follow the instructions in the configuration file.
+       
+## Running the Bot
+
+13. Once all of the information in the configurations file is filled out, the bot is ready to run, just double click Bot.py! For more information on what commands the bot can use, type ``>>help`` in the Discord chat.
 
 # Command Categories
 
@@ -111,6 +215,9 @@ The following are the commands that the bot can perform in their respective cate
 
 1. My bot was running fine a few days ago but lately, it suddenly stopped working and gave some errors about missing modules or cogs.
 - If the bot reports an error related to "cogs" or "missing modules", try to reinstall the bot by following the [installation instructions](#installation) or only reinstall the parts that is giving the error. Reinstalling may fix the problem because dependencies may occasionally become out of date or some files may have gotten corrupted.
+
+2. I had invited the bot to my server and it was working fine before but one day, it suddenly disappeared from the server.
+- For the server owner, head to ``Server Settings``. Under ``User Management``, click ``Members``. Look for the bot, kick it from the server then reinvite it. If the bot still does not show up, the user can try adding a role to the bot as for some servers, the offline list is invisible. If else, the user can try and relog to fix it.
 
 # Support
 
